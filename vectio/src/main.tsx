@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
+import './styles.css'
 import {
   Outlet,
   RouterProvider,
@@ -13,13 +14,15 @@ import TanstackQueryLayout from './integrations/tanstack-query/layout'
 
 import * as TanstackQuery from './integrations/tanstack-query/root-provider'
 
-import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
 
 import DashboardPage from "./pages/dashboard/index.tsx"
 import TripsPage from "./pages/trips/index.tsx"
 import FleetPage from "./pages/fleet/index.tsx"
 import DriverPage from "./pages/operators/index.tsx"
+import NewFleet from "./pages/fleet/NewFleet.tsx"
+import FleetDetailsPage from "./pages/fleet/FleetDetailsPage.tsx"
+import AppContainer from "./components/AppContainer/AppContainer.tsx"
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -31,24 +34,43 @@ const rootRoute = createRootRoute({
   ),
 })
 
-const indexRoute = createRoute({
+const projectLayout = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/dashboard',
-  component: DashboardPage,
+  path: '/',
+  component: AppContainer,
 })
 
 const tripRoutes = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => projectLayout,
   path: "/trips",
   component: TripsPage
 })
 
 
-const fleetRoutes = createRoute({
-  getParentRoute: () => rootRoute,
+// 
+
+const fleetIndex = createRoute({
+  getParentRoute: () => projectLayout,
   path: "/fleets",
   component: FleetPage
 })
+
+
+const fleetDetailsPage = createRoute({
+  getParentRoute: () => projectLayout,
+  path: "/fleets/$id",
+  component: FleetDetailsPage
+})
+
+// const newFleet = createRoute({
+//   getParentRoute: () => rootRoute,
+//   path: "/fleets/new",
+//   component: NewFleet,
+
+// })
+
+
+
 
 const driverRoutes = createRoute({
   getParentRoute: () => rootRoute,
@@ -60,11 +82,7 @@ const driverRoutes = createRoute({
 
 
 const routeTree = rootRoute.addChildren([
-  indexRoute,
-  tripRoutes,
-  fleetRoutes,
-  driverRoutes
-
+  projectLayout.addChildren([tripRoutes, fleetIndex.addChildren([fleetDetailsPage])])
 ])
 
 const router = createRouter({

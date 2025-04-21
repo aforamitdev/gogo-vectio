@@ -5,10 +5,10 @@ type Props = {}
 
 function TripsPage({ }: Props) {
 	return (
+		<div>
 
-		<AppContainer>
 			Trip Main
-		</AppContainer>
+		</div>
 	)
 }
 

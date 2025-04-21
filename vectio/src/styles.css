@@ -136,3 +136,9 @@ code {
     @apply bg-background text-foreground;
   }
 }
+/* shadcn required css */
+@layer components {
+  .radix-dropdown-menu-content {
+    @apply z-50 rounded-md border bg-popover p-2 text-popover-foreground shadow-md;
+  }
+}

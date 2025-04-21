@@ -2,6 +2,7 @@ import { AppSidebar } from "../navigations/AppSideBar"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "../ui/sidebar"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../ui/breadcrumb"
 import { Separator } from "@radix-ui/react-separator"
+import { Outlet } from "@tanstack/react-router"
 
 type Props = {
 	children: React.ReactNode
@@ -32,7 +33,7 @@ const AppContainer = (props: Props) => {
 					</div>
 				</header>
 				<div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-					{props.children}
+					<Outlet />
 				</div>
 			</SidebarInset>
 		</SidebarProvider>
