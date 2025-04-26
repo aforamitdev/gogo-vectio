@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const TripsMain = (props: Props) => {
+const TripsMain = () => {
 	return (
 		<div>TripsMain</div>
 	)

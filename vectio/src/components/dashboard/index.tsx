@@ -1,10 +1,7 @@
-import React from 'react'
 import Revenue from "./overview/revenue/Revenue"
 import { TripChart } from "./TripVisula/TripChart"
 
-type Props = {}
-
-const DashboardMain = (props: Props) => {
+const DashboardMain = () => {
 	return (
 		<>
 			<div className="md:flex md:gap-3  md:justify-between ">

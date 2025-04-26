@@ -1,11 +1,7 @@
-import AppContainer from "@/components/AppContainer/AppContainer"
-import React from 'react'
 
-type Props = {}
-
-const DriverPage = (props: Props) => {
+const DriverPage = () => {
 	return (
-		<AppContainer>asas</AppContainer>
+		<div>driver page </div>
 	)
 }
 

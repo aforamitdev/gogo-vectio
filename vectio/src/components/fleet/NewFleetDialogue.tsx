@@ -1,4 +1,3 @@
-import React from 'react'
 import {
 	Dialog,
 	DialogContent,
@@ -6,18 +5,14 @@ import {
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
-	DialogTrigger,
 } from "@/components/ui/dialog"
 
 
 import { Button } from "@/components/ui/button"
-import { useAtom, useAtomValue } from "jotai"
-import { newFleetDialogue } from "@/jotai/fleet/fleet"
 import useNewFleetPopup from "@/jotai/fleet/useNewFleetDialouge"
 import { Input } from "../ui/input"
 import { Label } from "../ui/label"
 
-type Props = {}
 
 function NewFleetDialogue() {
 

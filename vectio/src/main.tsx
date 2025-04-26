@@ -16,11 +16,8 @@ import * as TanstackQuery from './integrations/tanstack-query/root-provider'
 
 import reportWebVitals from './reportWebVitals.ts'
 
-import DashboardPage from "./pages/dashboard/index.tsx"
 import TripsPage from "./pages/trips/index.tsx"
 import FleetPage from "./pages/fleet/index.tsx"
-import DriverPage from "./pages/operators/index.tsx"
-import NewFleet from "./pages/fleet/NewFleet.tsx"
 import FleetDetailsPage from "./pages/fleet/FleetDetailsPage.tsx"
 import AppContainer from "./components/AppContainer/AppContainer.tsx"
 
@@ -72,11 +69,11 @@ const fleetDetailsPage = createRoute({
 
 
 
-const driverRoutes = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/operators",
-  component: DriverPage
-})
+// const driverRoutes = createRoute({
+//   getParentRoute: () => rootRoute,
+//   path: "/operators",
+//   component: DriverPage
+// })
 
 
 

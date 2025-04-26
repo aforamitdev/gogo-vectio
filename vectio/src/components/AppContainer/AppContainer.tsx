@@ -4,11 +4,8 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import { Separator } from "@radix-ui/react-separator"
 import { Outlet } from "@tanstack/react-router"
 
-type Props = {
-	children: React.ReactNode
-}
 
-const AppContainer = (props: Props) => {
+const AppContainer = () => {
 	return (
 		<SidebarProvider>
 			<AppSidebar variant="inset" />

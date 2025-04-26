@@ -1,10 +1,7 @@
-import React from 'react'
 import FleetCard from "./FleetCard"
 import { Truck } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Link } from "@tanstack/react-router"
-
-type Props = {}
 
 
 // This would typically come from a database
@@ -35,7 +32,7 @@ const fleets = [
 	},
 ]
 
-const FleetList = (props: Props) => {
+const FleetList = () => {
 	return (
 		<>
 			<h2 className="text-2xl font-bold mb-4">Your Fleets</h2>
@@ -43,7 +40,7 @@ const FleetList = (props: Props) => {
 				{fleets.map((fleet) => (
 					<FleetCard key={fleet.id} fleet={fleet} />
 				))}
-				<Link href="/fleets/create" className="block">
+				<Link to="/fleets" href="/fleets/create" className="block">
 					<Card className="h-full border-dashed cursor-pointer hover:border-primary/50 transition-colors">
 						<CardContent className="flex flex-col items-center justify-center h-full py-8">
 							<Truck className="h-12 w-12 text-muted-foreground mb-4" />

@@ -1,9 +1,6 @@
-import React from 'react'
-import AppContainer from '@/components/AppContainer/AppContainer'
 
-type Props = {}
 
-function TripsPage({}: Props) {
+function TripsPage() {
   return <div>Trip Main</div>
 }
 

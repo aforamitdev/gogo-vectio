@@ -1,14 +1,7 @@
-import AppContainer from "@/components/AppContainer/AppContainer"
-import DashboardMain from "@/components/dashboard"
-import React from 'react'
 
-type Props = {}
-
-const DashboardPage = (props: Props) => {
+const DashboardPage = () => {
 	return (
-		<AppContainer>
-			<DashboardMain />
-		</AppContainer>
+		<div>dashbaord page </div>
 	)
 }
 

@@ -1,11 +1,8 @@
-import { Outlet, useParams } from '@tanstack/react-router'
-import React from 'react'
-import AppContainer from '@/components/AppContainer/AppContainer'
+import { useParams } from "@tanstack/react-router"
 
-type Props = {}
 
-function FleetDetailsPage({}: Props) {
-  const { id } = useParams('/fleets/$id')
+function FleetDetailsPage() {
+  const { id } = useParams({ from: '/fleets/$id' })
 
   return <div>{id}</div>
 }

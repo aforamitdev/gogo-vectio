@@ -1,10 +1,9 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Link } from "@tanstack/react-router"
 import { MoreHorizontal, Truck, Users } from "lucide-react"
-import React from 'react'
 
 interface Fleet {
 	id: string
@@ -74,7 +73,7 @@ function FleetCard({ fleet }: FleetCardProps) {
 				</div>
 			</CardContent>
 			<CardFooter>
-				<Link href={`/fleets/${fleet.id}`} className="w-full">
+				<Link to="/fleets" href={`/fleets/${fleet.id}`} className="w-full">
 					<Button variant="outline" className="w-full">
 						View Fleet Details
 					</Button>
