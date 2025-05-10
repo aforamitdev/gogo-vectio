@@ -1,11 +1,9 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { TrendingDownIcon, TrendingUpIcon } from "lucide-react"
-import React from 'react'
+import { TrendingDownIcon } from "lucide-react"
 
-type Props = {}
 
-const MainOverview = (props: Props) => {
+const MainOverview = () => {
 	return (
 		<Card className="rounded-md">
 			<CardHeader className="relative">

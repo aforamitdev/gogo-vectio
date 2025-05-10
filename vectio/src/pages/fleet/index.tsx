@@ -1,21 +1,14 @@
-import { Link, Outlet } from "@tanstack/react-router"
-import React from 'react'
+import { Link } from "@tanstack/react-router"
 import { Boxes, PlusCircle, Users } from "lucide-react"
-import MainOverview from "./overview/MainOverview"
-import NewFleet from "./NewFleet"
-import AppContainer from "@/components/AppContainer/AppContainer"
 import PageHeader from "@/components/shared/PageHeader"
 import { Button } from "@/components/ui/button"
 import OverViewCard from "@/components/fleet/overview/OverViewCard"
 import NewFleetDialogue from "@/components/fleet/NewFleetDialogue"
-import { useAtom } from "jotai"
-import { newFleetDialogue } from "@/jotai/fleet/fleet"
 import useNewFleetPopup from "@/jotai/fleet/useNewFleetDialouge"
 import FleetList from "@/components/fleet/overview/FleetList"
 
-type Props = {}
 
-const FleetPage = (props: Props) => {
+const FleetPage = () => {
 
 	const { handleOpenClose } = useNewFleetPopup()
 
@@ -32,13 +25,13 @@ const FleetPage = (props: Props) => {
 						<PlusCircle className=" h-4 w-4" />
 						Create Fleet
 					</Button>
-					<Link hraf="/trailers">
+					<Link  to="/">
 						<Button variant="outline">
 							<Boxes className=" h-4 w-4" />
 							Manage Trailers
 						</Button>
 					</Link>
-					<Link hraf="/drivers">
+					<Link to="/">
 						<Button variant="outline">
 							<Users className=" h-4 w-4" />
 							Manage Drivers

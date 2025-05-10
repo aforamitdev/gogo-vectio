@@ -9,14 +9,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog'
 
 import { Button } from '@/components/ui/button'
-import { newFleetDialogue } from '@/jotai/fleet/fleet'
 import useNewFleetPopup from '@/jotai/fleet/useNewFleetDialouge'
-
-type Props = {}
 
 function NewFleetDialogue() {
   const { isOpen, handleOpenClose } = useNewFleetPopup()

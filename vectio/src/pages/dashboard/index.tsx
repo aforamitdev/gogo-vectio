@@ -1,5 +1,3 @@
-import React from 'react'
-import AppContainer from '@/components/AppContainer/AppContainer'
 import DashboardMain from '@/components/dashboard'
 
 type Props = {}

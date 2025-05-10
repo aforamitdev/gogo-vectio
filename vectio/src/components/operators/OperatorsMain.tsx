@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const OperatorsMain = (props: Props) => {
+const OperatorsMain = () => {
 	return (
 		<div>OperatorsMain</div>
 	)
