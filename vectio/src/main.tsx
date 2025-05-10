@@ -16,22 +16,14 @@ import * as TanstackQuery from './integrations/tanstack-query/root-provider'
 
 import reportWebVitals from './reportWebVitals.ts'
 
-<<<<<<< HEAD
 import DashboardPage from './pages/dashboard/index.tsx'
 import TripsPage from './pages/trips/index.tsx'
 import FleetPage from './pages/fleet/index.tsx'
-import DriverPage from './pages/operators/index.tsx'
-import NewFleet from './pages/fleet/NewFleet.tsx'
+
 import FleetDetailsPage from './pages/fleet/FleetDetailsPage.tsx'
 import AppContainer from './components/AppContainer/AppContainer.tsx'
 import ReportsPage from './pages/reports/index.tsx'
 import DriversPage from './pages/drivers/index.tsx'
-=======
-import TripsPage from "./pages/trips/index.tsx"
-import FleetPage from "./pages/fleet/index.tsx"
-import FleetDetailsPage from "./pages/fleet/FleetDetailsPage.tsx"
-import AppContainer from "./components/AppContainer/AppContainer.tsx"
->>>>>>> 761dbb82233eaadc4bf59063ecd2016d7c27e6de
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -92,17 +84,11 @@ const fleetDetailsPage = createRoute({
 
 // })
 
-
-
-
 // const driverRoutes = createRoute({
 //   getParentRoute: () => rootRoute,
 //   path: "/operators",
 //   component: DriverPage
 // })
-
-
-
 
 const routeTree = rootRoute.addChildren([
   dashboardPage,
