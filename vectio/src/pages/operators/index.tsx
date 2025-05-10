@@ -1,12 +1,10 @@
-import AppContainer from "@/components/AppContainer/AppContainer"
 import React from 'react'
+import AppContainer from '@/components/AppContainer/AppContainer'
 
 type Props = {}
 
 const DriverPage = (props: Props) => {
-	return (
-		<AppContainer>asas</AppContainer>
-	)
+  return <div>asas</div>
 }
 
 export default DriverPage

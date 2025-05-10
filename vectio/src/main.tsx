@@ -16,13 +16,15 @@ import * as TanstackQuery from './integrations/tanstack-query/root-provider'
 
 import reportWebVitals from './reportWebVitals.ts'
 
-import DashboardPage from "./pages/dashboard/index.tsx"
-import TripsPage from "./pages/trips/index.tsx"
-import FleetPage from "./pages/fleet/index.tsx"
-import DriverPage from "./pages/operators/index.tsx"
-import NewFleet from "./pages/fleet/NewFleet.tsx"
-import FleetDetailsPage from "./pages/fleet/FleetDetailsPage.tsx"
-import AppContainer from "./components/AppContainer/AppContainer.tsx"
+import DashboardPage from './pages/dashboard/index.tsx'
+import TripsPage from './pages/trips/index.tsx'
+import FleetPage from './pages/fleet/index.tsx'
+import DriverPage from './pages/operators/index.tsx'
+import NewFleet from './pages/fleet/NewFleet.tsx'
+import FleetDetailsPage from './pages/fleet/FleetDetailsPage.tsx'
+import AppContainer from './components/AppContainer/AppContainer.tsx'
+import ReportsPage from './pages/reports/index.tsx'
+import DriversPage from './pages/drivers/index.tsx'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -40,26 +42,40 @@ const projectLayout = createRoute({
   component: AppContainer,
 })
 
-const tripRoutes = createRoute({
+const dashboardPage = createRoute({
   getParentRoute: () => projectLayout,
-  path: "/trips",
-  component: TripsPage
+  path: '/dashboard',
+  component: DashboardPage,
 })
 
+const tripRoutes = createRoute({
+  getParentRoute: () => projectLayout,
+  path: '/trips',
+  component: TripsPage,
+})
 
-// 
+const operatorPage = createRoute({
+  getParentRoute: () => projectLayout,
+  path: '/operators',
+  component: DriversPage,
+})
+//
 
 const fleetIndex = createRoute({
   getParentRoute: () => projectLayout,
-  path: "/fleets",
-  component: FleetPage
+  path: '/fleets',
+  component: FleetPage,
 })
 
-
+const reportIndex = createRoute({
+  getParentRoute: () => projectLayout,
+  path: '/reports',
+  component: ReportsPage,
+})
 const fleetDetailsPage = createRoute({
   getParentRoute: () => projectLayout,
-  path: "/fleets/$id",
-  component: FleetDetailsPage
+  path: '/fleets/$id',
+  component: FleetDetailsPage,
 })
 
 // const newFleet = createRoute({
@@ -69,20 +85,14 @@ const fleetDetailsPage = createRoute({
 
 // })
 
-
-
-
-const driverRoutes = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/operators",
-  component: DriverPage
-})
-
-
-
-
 const routeTree = rootRoute.addChildren([
-  projectLayout.addChildren([tripRoutes, fleetIndex.addChildren([fleetDetailsPage])])
+  dashboardPage,
+  reportIndex,
+  operatorPage,
+  projectLayout.addChildren([
+    tripRoutes,
+    fleetIndex.addChildren([fleetDetailsPage]),
+  ]),
 ])
 
 const router = createRouter({

@@ -16,7 +16,6 @@ const NewFleet = (props: Props) => {
 
 "
           />
-          <div>as</div>
         </div>
       </AppContainer>
     </div>

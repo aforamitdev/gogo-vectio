@@ -1,15 +1,11 @@
-import AppContainer from "@/components/AppContainer/AppContainer"
-import DashboardMain from "@/components/dashboard"
 import React from 'react'
+import AppContainer from '@/components/AppContainer/AppContainer'
+import DashboardMain from '@/components/dashboard'
 
 type Props = {}
 
 const DashboardPage = (props: Props) => {
-	return (
-		<AppContainer>
-			<DashboardMain />
-		</AppContainer>
-	)
+  return <DashboardMain />
 }
 
 export default DashboardPage
